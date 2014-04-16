@@ -1,0 +1,75 @@
+<h1>Process</h1>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Key</th>
+      <th>Value</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @process.each do |(key, value)| %>
+      <tr>
+        <td><%= key %></td>
+        <td><%= value %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<h1>Limits on Resources</h1>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Limit</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @rlimits.each do |(key, value)| %>
+      <tr>
+        <td><%= key %></td>
+        <td><%= value %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<h1>Threads</h1>
+
+Count: <%= @threads_count %>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Status</th>
+      <th>Alive</th>
+      <th>Abort on Ex.</th>
+      <th>Current</th>
+      <th>Main</th>
+      <th>Native ID</th>
+      <th>Name</th>
+      <th>Daemon</th>
+      <th>Priority</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @threads.each do |thread| %>
+      <tr>
+        <td><%= link_to thread.id, thread_path(thread.id) %></td>
+        <td><%= thread.status %></td>
+        <td><%= thread.is_alive %></td>
+        <td><%= thread.abort_on_exception %></td>
+        <td><%= thread.is_current %></td>
+        <td><%= thread.is_main %></td>
+        <td><%= thread.native_id %></td>
+        <td><%= thread.name %></td>
+        <td><%= thread.is_daemon %></td>
+        <td><%= thread.priority %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+

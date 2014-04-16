@@ -1,0 +1,21 @@
+/*@import "bootstrap/variables";*/
+/*@import "bootstrap/mixins";*/
+
+@import "bootstrap";
+
+body { padding-top: 45px; }
+@import "bootstrap-responsive";
+
+.navbar .nav > li > a {
+  padding: 10px 5px;
+}
+
+h1 {
+  font-weight: lighter;
+  font-size: 25px;
+}
+
+.table {
+  margin-bottom: 10px;
+}
+

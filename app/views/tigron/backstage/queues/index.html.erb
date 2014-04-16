@@ -1,0 +1,29 @@
+<h1>Queues</h1>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Status</th>
+      <th>Messages</th>
+      <th>Delivering</th>
+      <th>Scheduled</th>
+      <th>Added</th>
+      <th>Consumers</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @queues.each do |queue| %>
+      <tr>
+        <td width="20%"><%= link_to queue.name, queue_path(Base64.encode64(queue.name)) %> (<%= queue.durable %>)</td>
+        <td><%= queue.status %></td>
+        <td><%= queue.messages %></td>
+        <td><%= queue.delivering %></td>
+        <td><%= queue.scheduled %></td>
+        <td><%= queue.added %></td>
+        <td><%= queue.consumers %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+

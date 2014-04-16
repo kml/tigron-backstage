@@ -1,0 +1,21 @@
+<h1>Services</h1>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Ruby Class</th>
+      <th>Status</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @services.each do |service| %>
+      <tr>
+        <td><%= service.name %></td>
+        <td><%= service.ruby_class_name %></td>
+        <td><%= service.status %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+

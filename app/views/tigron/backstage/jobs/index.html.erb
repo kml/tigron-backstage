@@ -1,0 +1,42 @@
+<h1>Jobs</h1>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Ruby Class</th>
+      <th>Schedule</th>
+      <th>Trigger State</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @jobs.each do |job| %>
+      <tr>
+        <td><%= job.name %></td>
+        <td><%= job._info[:job] %></td>
+        <td><%= job.cron_trigger[:cron_expression] %></td>
+        <td><%= job.cron_trigger[:state] %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<h1>Scheduler Info</h1>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Key</th>
+      <th>Value</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @meta_data.each do |(key, value)| %>
+      <tr>
+        <td><%= key %></td>
+        <td><%= value %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+

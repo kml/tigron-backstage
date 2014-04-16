@@ -1,0 +1,50 @@
+<h1>Message Processors</h1>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Destination</th>
+      <th>Concurrency</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @message_processors.each do |processor| %>
+      <tr>
+        <td><%= processor.name %></td>
+        <td><%= processor.destination %></td>
+        <td><%= processor.concurrency %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<h1>Workers</h1>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Destination</th>
+      <th>Failed</th>
+      <th>Processed</th>
+      <th>Status</th>
+      <th>Started at</th>
+      <th>Message ID</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @workers.each do |worker| %>
+      <tr>
+        <td><%= worker.name %></td>
+        <td><%= worker.queue %></td>
+        <td><%= worker.failed %></td>
+        <td><%= worker.processed %></td>
+        <td><%= worker.status %></td>
+        <td><%= worker.started_at %></td>
+        <td><%= worker.message_id %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
