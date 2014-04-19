@@ -5,6 +5,7 @@ module Tigron
   end
 end
 
+require "tigron/backstage/version"
 require "jquery-rails"
 require "tigron/backstage/engine"
 
